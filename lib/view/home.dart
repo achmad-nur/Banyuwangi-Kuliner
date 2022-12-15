@@ -1,4 +1,5 @@
 import 'package:banyuwangikuliner/model/resep_model.dart';
+import 'package:banyuwangikuliner/view/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:banyuwangikuliner/service/resep_card.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -24,12 +25,12 @@ class _HomeState extends State<Home> {
           children: [
             // AssetImage('lib/images/makan2.png'),
             Image.asset('lib/images/makan2.png', width: 45,),
-             const Text('Banyuwangi Kuliner'),
+             const Text('Daftar Makanan'),
           ],
         ),
         // title: 
         // const Text('Banyuwangi Kuliner'),
-        backgroundColor: HexColor('522206'),
+        backgroundColor: HexColor('D29035'),
       ),
       body: FutureBuilder<List<Data>>(
           future: Resep1.getDataResep(),
@@ -52,7 +53,10 @@ class _HomeState extends State<Home> {
                     
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      return Container(
+                      return GestureDetector(
+                        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => detailPage(
+                          data: snapshot.data![index], fetchData: Resep1.getDataResep()),)),
+                        child:        Container(
                         width: double.infinity,
                         height: 200,
                         decoration: BoxDecoration(
@@ -73,7 +77,9 @@ class _HomeState extends State<Home> {
                           ),
                           ) 
                        
-                      );                    
+                      )     ,
+                      );
+                              
                     },
                     )
                   // GridView.builder(

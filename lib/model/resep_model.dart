@@ -28,6 +28,7 @@ class Data {
   String? deskripsi;
   String? harga;
   String? resep;
+  String? carapembuatan;
 
   Data({this.id, this.nama, this.img, this.deskripsi, this.harga, this.resep});
 
@@ -38,6 +39,7 @@ class Data {
     deskripsi = json['deskripsi'];
     harga = json['harga'];
     resep = json['resep'];
+    carapembuatan = json['carapembuatan'];
   }
 
   Map<String, dynamic> toJson() {
@@ -48,6 +50,7 @@ class Data {
     data['deskripsi'] = this.deskripsi;
     data['harga'] = this.harga;
     data['resep'] = this.resep;
+    data['carapembuatan'];
     return data;
   }
 }
