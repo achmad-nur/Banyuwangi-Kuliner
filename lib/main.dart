@@ -1,5 +1,6 @@
 import 'package:banyuwangikuliner/view/SplashScreen.dart';
 import 'package:banyuwangikuliner/view/home.dart';
+import 'package:banyuwangikuliner/view/profile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       // theme: themeData,
       debugShowCheckedModeBanner: false,
       // home : Login(),
-      home : Home(),
+      home:Splashscreen(),
       // home : dashboardd(),
     );
   }
